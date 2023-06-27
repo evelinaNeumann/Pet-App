@@ -32,15 +32,16 @@ mongoose
       }
     };
 
-    // Save dogs
+    /*// Save dogs
     saveAnimals(data.dogs, "dog");
 
     // Save cats
     saveAnimals(data.cats, "cat");
 
     // Save small pets
-    saveAnimals(data.small_pets, "small_pet");
+    saveAnimals(data.small_pets, "small_pet");*/
   })
+
   .catch((err) => {
     console.error("Error connecting to MongoDB: ", err);
   });
