@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Animal = require("../models/Animal.model");
 const data = require("../data/pets.json");
 
-const MONGO_URI = "mongodb+srv://admin-pet-app:IT3exFM61TgrwXVJ@cluster0.e34wnon.mongodb.net/";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb+srv://admin-pet-app:IT3exFM61TgrwXVJ@cluster0.e34wnon.mongodb.net/";
 
 mongoose
   .connect(MONGO_URI)
