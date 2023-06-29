@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import GuidelinesPage from "./pages/GuidelinesPage/GuidelinesPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -35,11 +36,21 @@ function App() {
             </IsAnon>
           }
         />
+
         <Route
           path="/login"
           element={
             <IsAnon>
               <LoginPage />
+            </IsAnon>
+          }
+        />
+
+<Route
+          path="/guidelines"
+          element={
+            <IsAnon>
+              <GuidelinesPage />
             </IsAnon>
           }
         />
