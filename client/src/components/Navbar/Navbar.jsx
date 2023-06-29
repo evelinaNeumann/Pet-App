@@ -4,9 +4,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
 function Navbar() {
-  // Subscribe to the AuthContext to gain access to
-  // the values from AuthContext.Provider's `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+
+  const handleChatClick = () => {
+    // Implement the logic for opening the live chat window
+    // e.g., using a chat library or triggering a chat modal
+    console.log("Open live chat");
+  };
 
   return (
     <nav>
@@ -20,8 +24,13 @@ function Navbar() {
 
           <Link to="/profile">
             <button>Profile</button>
-            {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
           </Link>
+
+          <Link to="/guidelines">
+            <button>Guidelines</button>
+          </Link>
+
+          <button onClick={handleChatClick}>Live Chat</button>
 
           <span>{user && user.name}</span>
         </>
@@ -30,13 +39,15 @@ function Navbar() {
       {!isLoggedIn && (
         <>
           <Link to="/signup">
-            {" "}
-            <button>Sign Up</button>{" "}
+            <button>Sign Up</button>
           </Link>
           <Link to="/login">
-            {" "}
-            <button>Login</button>{" "}
+            <button>Login</button>
           </Link>
+          <Link to="/guidelines">
+            <button>Guidelines</button>
+          </Link>
+          <button onClick={handleChatClick}>Live Chat</button>
         </>
       )}
     </nav>
