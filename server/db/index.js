@@ -16,6 +16,7 @@ mongoose
         const newAnimal = new Animal({
           _id: new mongoose.Types.ObjectId(),
           category: category,
+          name: animal.name,
           type: animal.type,
           age: animal.age,
           temper: animal.temper,
@@ -32,14 +33,14 @@ mongoose
       }
     };
 
-    /*// Save dogs
+   /* //Save dogs
     saveAnimals(data.dogs, "dog");
 
     // Save cats
     saveAnimals(data.cats, "cat");
 
     // Save small pets
-    saveAnimals(data.small_pets, "small_pet");*/
+    saveAnimals(data.small_pets, "small_pet"); */
   })
 
   .catch((err) => {

@@ -21,4 +21,8 @@ router.get("/small_pets", (req, res, next) => {
   const smallPets = animalsData.small_pets;
   res.json(smallPets);
 });
+router.get("/all_pets", (req, res, next) => {
+  const smallPets = animalsData;
+  res.json(smallPets);
+});
 module.exports = router;
