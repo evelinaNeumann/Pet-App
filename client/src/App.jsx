@@ -17,7 +17,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
+
+        <Route path="/guidelines" element={<GuidelinesPage/>} />
 
         <Route
           path="/profile"
@@ -36,21 +38,11 @@ function App() {
             </IsAnon>
           }
         />
-
         <Route
           path="/login"
           element={
             <IsAnon>
               <LoginPage />
-            </IsAnon>
-          }
-        />
-
-<Route
-          path="/guidelines"
-          element={
-            <IsAnon>
-              <GuidelinesPage />
             </IsAnon>
           }
         />
