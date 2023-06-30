@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <nav>
-      <Link to="/">
+      <Link to="/home">
         <button>Home</button>
       </Link>
 
