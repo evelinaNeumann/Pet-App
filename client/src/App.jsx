@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
+import LandingPage from "./pages/LandingPage/LandingPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
@@ -17,7 +18,8 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<LandingPage/>} />
+        <Route path="/home" element={<HomePage/>} />
 
         <Route path="/guidelines" element={<GuidelinesPage/>} />
 
