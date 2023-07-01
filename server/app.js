@@ -14,6 +14,25 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+const io = require('socket.io');
+
+// Socket.io event handlers
+io.on('connection', (socket) => {
+  console.log('New user connected');
+
+  // Handle chat messages
+  socket.on('chat message', (message) => {
+    console.log('Received message:', message);
+    // Emit the message to all connected clients
+    io.emit('chat message', message);
+  });
+
+  // Handle disconnection
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
