@@ -31,6 +31,10 @@ class AuthService {
     // return axios.post("http://localhost:5005/auth/singup");
   };
 
+  ownersignup = (requestBody) => {
+    return this.api.post("/auth/ownersignup", requestBody);
+  };
+
   verify = () => {
     return this.api.get("/auth/verify");
     // same as

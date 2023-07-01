@@ -79,24 +79,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
-
-  // return (
-  //   <div>
-  //     <h1>Home page</h1>
-  //     <div>
-
-  //     {isLoggedIn ?
-  //     {pets.map((pet) => {
-  //       return (
-  //         <PetsPage key={pet.id} name={pet.name} category={pet.category} type={pet.type} age={pet.age} temper={pet.temper} special_needs={pet.special_needs} image={pet.image} />
-  //       );
-  //     })}
-  //     :
-  //     <LoginPage />
-  //     }
-
-  //     </div>
-  //   </div>
-  // );
