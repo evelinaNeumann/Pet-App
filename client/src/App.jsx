@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import GuidelinesPage from "./pages/GuidelinesPage/GuidelinesPage";
+import ShopHomePage from "./pages/ShopHomePage/ShopHomePage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -22,6 +23,8 @@ function App() {
         <Route path="/home" element={<HomePage/>} />
 
         <Route path="/guidelines" element={<GuidelinesPage/>} />
+        <Route path="/shop" element={<ShopHomePage/>} />
+
 
         <Route
           path="/profile"

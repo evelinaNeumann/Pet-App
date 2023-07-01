@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import GuidelinesPage from "../../pages/GuidelinesPage/GuidelinesPage"
+import ShopHomePage from "../../pages/ShopHomePage/ShopHomePage";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -30,6 +31,9 @@ function Navbar() {
           <Link to="/guidelines">
             <button>Guidelines</button>
           </Link>
+          <Link to="/shop">
+            <button>Shop</button>
+          </Link>
 
           <button onClick={handleChatClick}>Live Chat</button>
 
@@ -47,6 +51,9 @@ function Navbar() {
           </Link>
           <Link to="/guidelines">
             <button>Guidelines</button>
+          </Link>
+          <Link to="/shop">
+            <button>Shop</button>
           </Link>
           <button onClick={handleChatClick}>Live Chat</button>
         </>
