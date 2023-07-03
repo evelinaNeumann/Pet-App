@@ -35,7 +35,7 @@ function OwnerSignupPage() {
       .ownersignup(requestBody)
       .then((response) => {
         // If the POST request is successful redirect to the login page
-        navigate("/login");
+        navigate("/ownerlogin");
       })
       .catch((error) => {
         // If the request resolves with an error, set the error message in the state

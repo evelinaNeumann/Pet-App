@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import GuidelinesPage from "./pages/GuidelinesPage/GuidelinesPage";
 import ShopHomePage from "./pages/ShopHomePage/ShopHomePage";
 import OwnerSignupPage from "./pages/OwnerSignupPage/OwnerSignupPage";
+import OwnerLoginPage from "./pages/OwnerLoginPage/OwnerLoginPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -48,6 +49,12 @@ function App() {
         <Route path="/ownersignup" element={
           <IsAnon>
             <OwnerSignupPage/>
+          </IsAnon>
+        } />
+
+        <Route path="/ownerlogin" element={
+          <IsAnon>
+            <OwnerLoginPage/>
           </IsAnon>
         } />
 

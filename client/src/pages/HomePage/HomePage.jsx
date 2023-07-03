@@ -21,9 +21,7 @@ function HomePage() {
       } else {
         getAllPets();
       }
-    } else {
-      getAllPets();
-    }
+    } 
   }, [user]);
 
 
