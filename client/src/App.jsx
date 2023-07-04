@@ -10,6 +10,11 @@ import GuidelinesPage from "./pages/GuidelinesPage/GuidelinesPage";
 import ShopHomePage from "./pages/ShopHomePage/ShopHomePage";
 import OwnerSignupPage from "./pages/OwnerSignupPage/OwnerSignupPage";
 import OwnerLoginPage from "./pages/OwnerLoginPage/OwnerLoginPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
+
+import CartPage from "./pages/CartPage/CatPage";
+
+
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -26,6 +31,9 @@ function App() {
 
         <Route path="/guidelines" element={<GuidelinesPage/>} />
         <Route path="/shop" element={<ShopHomePage/>} />
+        <Route path="/product/:productId" element={<ProductDetailsPage />} />
+        <Route path="/cart" element={<CartPage />} />
+
 
         
         <Route
