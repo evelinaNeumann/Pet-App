@@ -8,6 +8,8 @@ import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import GuidelinesPage from "./pages/GuidelinesPage/GuidelinesPage";
 import ShopHomePage from "./pages/ShopHomePage/ShopHomePage";
+import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailspage";
+import CartPage from "./pages/CartPage/CartPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -24,6 +26,8 @@ function App() {
 
         <Route path="/guidelines" element={<GuidelinesPage/>} />
         <Route path="/shop" element={<ShopHomePage/>} />
+        <Route path="/product/:productId" element={<ProductDetailsPage />} />
+        <Route path="/cart" element={<CartPage />} />
 
 
         <Route

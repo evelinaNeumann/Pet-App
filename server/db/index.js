@@ -13,12 +13,8 @@ mongoose
     console.log(`Connected to Mongo! Database name: "${dbName}"`);
 
     // Function to save animals of a specific category
-const saveAnimals = async (animals, category) => {
-  for (let animal of animals) {
-    try {
-      const existingAnimal = await Animal.findOne({ name: animal.name });
-
-      if (!existingAnimal) {
+    const saveAnimals = async (animals, category) => {
+      for (let animal of animals) {
         const newAnimal = new Animal({
           _id: new mongoose.Types.ObjectId(),
           category: category,
@@ -30,17 +26,14 @@ const saveAnimals = async (animals, category) => {
           image: animal.image,
         });
 
-        await newAnimal.save();
-        console.log(`Saved ${category}: ${animal.name}`);
-      } else {
-        console.log(`Animal already exists: ${animal.name}`);
+        try {
+          await newAnimal.save();
+          console.log(`Saved ${category}: ${animal.name}`);
+        } catch (err) {
+          console.error(`Error saving ${category}: ${animal.name}`, err);
+        }
       }
-    } catch (err) {
-      console.error(`Error saving ${category}: ${animal.name}`, err);
-    }
-  }
-};
-
+    };
 
     // Function to save products
     const saveProducts = async (products) => {

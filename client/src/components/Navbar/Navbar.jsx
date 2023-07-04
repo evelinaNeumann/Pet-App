@@ -1,9 +1,7 @@
-import "./Navbar.css";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import GuidelinesPage from "../../pages/GuidelinesPage/GuidelinesPage"
-import ShopHomePage from "../../pages/ShopHomePage/ShopHomePage";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -15,27 +13,32 @@ function Navbar() {
   };
 
   return (
-    <nav>
-      <Link to="/home">
-        <button>Home</button>
+    <nav className="flex justify-end space-x-2 mt-2 mr-2">
+      <Link to="/home" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+        Home
       </Link>
 
       {isLoggedIn && (
         <>
-          <button onClick={logOutUser}>Logout</button>
+          <button onClick={logOutUser} className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Logout
+          </button>
 
-          <Link to="/profile">
-            <button>Profile</button>
+          <Link to="/profile" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Profile
           </Link>
 
-          <Link to="/guidelines">
-            <button>Guidelines</button>
-          </Link>
-          <Link to="/shop">
-            <button>Shop</button>
+          <Link to="/guidelines" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Guidelines
           </Link>
 
-          <button onClick={handleChatClick}>Live Chat</button>
+          <Link to="/shop" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Shop
+          </Link>
+
+          <button onClick={handleChatClick} className="px-4 py-2 rounded bg-lime-800 text-white bg-lime-800">
+            Live Chat
+          </button>
 
           <span>{user && user.name}</span>
         </>
@@ -43,19 +46,25 @@ function Navbar() {
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup">
-            <button>Sign Up</button>
+          <Link to="/signup" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Sign Up
           </Link>
-          <Link to="/login">
-            <button>Login</button>
+
+          <Link to="/login" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Login
           </Link>
-          <Link to="/guidelines">
-            <button>Guidelines</button>
+
+          <Link to="/guidelines" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Guidelines
           </Link>
-          <Link to="/shop">
-            <button>Shop</button>
+
+          <Link to="/shop" className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Shop
           </Link>
-          <button onClick={handleChatClick}>Live Chat</button>
+
+          <button onClick={handleChatClick} className="px-4 py-2 rounded bg-lime-800 text-white hover:bg-lime-800">
+            Live Chat
+          </button>
         </>
       )}
     </nav>

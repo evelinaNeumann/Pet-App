@@ -1,16 +1,21 @@
 import React from "react";
 
-const ProductPage = ({ name, category, price, description, quantity, image }) => {
+function ProductPage({ category, products }) {
   return (
     <div>
-      <img src={image} alt="Product picture" />
-      <p>{name}</p>
-      <p>{category}</p>
-      <p>${price.toFixed(2)}</p>
-      <p>{description}</p>
-      <p>Available: {quantity}</p>
+      <h2>{category}</h2>
+      {products.map((product) => (
+        <div key={product.id}>
+          <img src={product.image} alt={product.name} />
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <p>Quantity: {product.quantity}</p>
+          
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default ProductPage;
