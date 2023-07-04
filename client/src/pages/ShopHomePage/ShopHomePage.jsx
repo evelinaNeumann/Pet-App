@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import "react-alice-carousel/lib/react-alice-carousel";
 import "./ShopHomePage.css";
 
 function ShopHomePage() {
