@@ -2,5 +2,8 @@
   "dependencies": {
     "node-sass": "^9.0.0",
     "react-alice-carousel": "^2.7.1"
+  },
+  "devDependencies": {
+    "sass": "^1.63.6"
   }
 }
