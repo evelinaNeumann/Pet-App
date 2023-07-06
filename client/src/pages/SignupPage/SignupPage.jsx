@@ -2,6 +2,9 @@ import "./SignupPage.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
+import PetImg from "../../images/iStock-1324099927.webp"
+import PetImg2 from "../../images/petsimage.png"
+import PetImg3 from "../../images/national-pets-day.webp"
 // import axios from "axios";
 
 function SignupPage() {
@@ -50,37 +53,59 @@ function SignupPage() {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
 
+      <div className="min-h-screen py-40" style={{ backgroundImage: "linear-gradient(115deg, rgb(237, 135, 51), rgb(255, 175, 128))" }}>
+      <div className="container mx-auto">
+      <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+
+
+      <div className="w-full lg:w-1/2 flex flex-col items-center  p-12 bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${PetImg2})`, objectFit: "scale-down" }}>
+      <h1 style={{color:"rgb(63, 98, 18)"}} className="text-3xl mb-3 font-bold">Welcome</h1>
+      <div>
+        <p style={{color:"rgb(63, 98, 18)"}} className="mb-3 font-semibold text-black">Welcome to the Friends furr-ever app! Search for your perfect match, change your life <a href="#" className="font-bold" style={{color:"rgb(63, 98, 18)"}}>Learn more</a></p>
+      </div>
+      </div>
+
+      <div className="w-full lg:w-1/2 py-16 px-12">
+            <h2  className="text-3xl mb-4">Register</h2>
+            <p className="mb-4">
+              Create your account. It’s free and only take a minute
+            </p>
       <form onSubmit={handleSignupSubmit}>
 
-        <input type="email" name="email" value={email} onChange={handleEmail} placeholder="Enter your email" />
+      <div className="grid grid-cols-2 gap-5">
+        <input className="border border-gray-400 py-1 px-2" type="email" name="email" value={email} onChange={handleEmail} placeholder="Enter your email" />
+        <input className="border border-gray-400 py-1 px-2" type="password" name="password" value={password} onChange={handlePassword} placeholder="Enter a password"/>
+      </div>
 
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword} 
-          placeholder="Enter a password"
-        />
+      <div className="mt-5">
+        <input className="border border-gray-400 py-1 px-2 w-full" type="text" name="name" value={name} onChange={handleName} placeholder="Enter your name"/>
+      </div>
 
-        <input type="text" name="name" value={name} onChange={handleName} placeholder="Enter your name"/>
-
-        <label>What are you looking for?</label>
-        <select value={preference} onChange={handlePreference}>
+      <div className="mt-5">
+      <label>What are you looking for?</label>
+        <select className="border border-gray-400 py-1 px-2 w-full" value={preference} onChange={handlePreference}>
           <option value="Dogs">Dogs</option>
           <option value="Cats">Cats</option>
           <option value="Small Pets">Small Pets</option>
           <option value="All Pets">All Pets</option>
         </select>
+      </div>
 
-        <button type="submit">Sign Up</button>
+      <div className="mt-5">
+
+      </div>
+        <button className="w-full py-3 text-center text-white" style={{ backgroundColor: "rgb(63, 98, 18)" }}  type="submit">Sign Up</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link style={{color: "rgb(63, 98, 18)"}} to={"/login"} className="font-bold" > Login</Link>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }
