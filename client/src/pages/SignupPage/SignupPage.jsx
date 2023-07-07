@@ -2,9 +2,7 @@ import "./SignupPage.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
-import PetImg from "../../images/iStock-1324099927.webp"
 import PetImg2 from "../../images/petsimage.png"
-import PetImg3 from "../../images/national-pets-day.webp"
 // import axios from "axios";
 
 function SignupPage() {
