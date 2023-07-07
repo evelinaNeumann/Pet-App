@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "node-sass": "^9.0.0",
+    "react-alice-carousel": "^2.7.1",
+    "react-scroll-to-bottom": "^4.2.0",
+    "socket.io": "^4.7.1",
+    "socket.io-client": "^4.7.1"
     "react-alice-carousel": "^2.7.1"
   },
   "devDependencies": {
