@@ -126,7 +126,7 @@ router.post("/ownersignup", (req, res, next) => {
   const { ownerEmail, ownerPassword, ownerName, ownerPhone, city, state, zip, country } = req.body;
 
   // Check if email or password or name are provided as empty strings
-  if (ownerEmail === "" || ownerPassword === "" || ownerName === "") {
+  if (ownerEmail === "" || ownerPassword === "" || ownerName === "" || ownerPhone === "" || city === "" || state === ""  || country === "") {
     res.status(400).json({ message: "Provide email, password, name and address" });
     return;
   }

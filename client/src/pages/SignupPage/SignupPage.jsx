@@ -60,14 +60,14 @@ function SignupPage() {
       <div className="w-full lg:w-1/2 flex flex-col items-center  p-12 bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${PetImg2})`, objectFit: "scale-down" }}>
       <h1 style={{color:"rgb(63, 98, 18)"}} className="text-3xl mb-3 font-bold">Welcome</h1>
       <div>
-        <p style={{color:"rgb(63, 98, 18)"}} className="mb-3 font-semibold text-black">Welcome to the Friends furr-ever app! Search for your perfect match, change your life <a href="#" className="font-bold" style={{color:"rgb(63, 98, 18)"}}>Learn more</a></p>
+        <p style={{color:"rgb(63, 98, 18)"}} className="mb-3 font-semibold text-black">Welcome to the Friends furr-ever app! Search for your perfect match, change your life <br/> <a href="#" className="font-bold" style={{color:"rgb(63, 98, 18)"}}>Learn more</a></p>
       </div>
       </div>
 
       <div className="w-full lg:w-1/2 py-16 px-12">
             <h2  className="text-3xl mb-4">Register</h2>
             <p className="mb-4">
-              Create your account. It’s free and only take a minute
+              Are you planning on adopting a pet? Create your account.
             </p>
       <form onSubmit={handleSignupSubmit}>
 
@@ -83,6 +83,7 @@ function SignupPage() {
       <div className="mt-5">
       <label>What are you looking for?</label>
         <select className="border border-gray-400 py-1 px-2 w-full" value={preference} onChange={handlePreference}>
+          <option disabled hidden style={{ display: 'none' }}></option>
           <option value="Dogs">Dogs</option>
           <option value="Cats">Cats</option>
           <option value="Small Pets">Small Pets</option>

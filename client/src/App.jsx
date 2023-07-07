@@ -1,6 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react"; // Import useState hook
+import { useContext } from "react";
+import { AuthContext } from "../../client/src/context/auth.context";
 
 import io from "socket.io-client";
 
@@ -27,6 +29,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   const joinRoom = () => {
     console.log(username, room);
@@ -38,8 +41,10 @@ function App() {
     <div className="App">
       {!showChat ? (
         <>
-          <Navbar />
-
+        {isLoggedIn && (
+          <><Navbar /></>
+        )}
+          
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<HomePage />} />
